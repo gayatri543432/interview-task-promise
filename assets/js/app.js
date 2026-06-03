@@ -1,6 +1,8 @@
 const cl = console.log;
 
 function fetchProductId() {
+    spinner.classList.remove('d-none')
+
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let success = Math.random() > 0.5;
@@ -15,6 +17,8 @@ function fetchProductId() {
 }
 
 function fetchProductById() {
+    spinner.classList.remove('d-none')
+
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let success = Math.random() > 0.5;
@@ -29,6 +33,8 @@ function fetchProductById() {
 }
 
 function fetchProductReview() {
+    spinner.classList.remove('d-none')
+
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let success = Math.random() > 0.5;
@@ -61,4 +67,9 @@ fetchProductId()
             icon: "error",
             timer: 3000
             });
-    });
+    })
+
+    .finally(()=>{
+    spinner.classList.add('d-none')
+    }
+    )
